@@ -1,0 +1,14 @@
+{% extends 'playground_app/base.html' %}
+
+{% block content %}
+<h1>Character List</h1>
+<ul>
+    {% for character in characters %}
+    <li>
+        <a href="{% url 'character_detail' id_character=character.id_character %}">
+            {{ character.id_character }} - {{ character.type }} - {{ character.etat }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
